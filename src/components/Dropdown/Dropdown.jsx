@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { InputContext } from "../../context/InputContext";
+import { setData, setFocus } from "../../utils/functions";
 
 const Dropdown = (props) => {
   const { label, boxfor, options, id } = props;
@@ -7,7 +8,18 @@ const Dropdown = (props) => {
 
   const updateSelectedData = (e) => {
     const data = e.target.value;
-    setInputData({ ...inputData, [id]: data.trim() });
+    const update = setData(id, data, inputData);
+    setInputData(update);
+  };
+
+  const setBoxFocus = () => {
+    const update = setFocus(id, inputData, true);
+    setInputData(update);
+  };
+
+  const resetBoxFocus = () => {
+    const update = setFocus(id, inputData, false);
+    setInputData(update);
   };
 
   const renderOptions = () => {
@@ -21,7 +33,13 @@ const Dropdown = (props) => {
   };
 
   return (
-    <select aria-label={label} onChange={updateSelectedData}>
+    <select
+      aria-label={label}
+      onChange={updateSelectedData}
+      onBlur={resetBoxFocus}
+      onFocus={setBoxFocus}
+      value={inputData[id].value}
+    >
       <option defaultValue>&#x2713; {boxfor}</option>
       {renderOptions()}
     </select>

@@ -31,3 +31,25 @@ export const getMonthRange = () => {
   }
   return monthData;
 };
+
+export const setData = (key, data, state) => {
+  const obj = {
+    ...state,
+    [key]: {
+      value: data.trim(),
+      focus: state[key].focus,
+    },
+  };
+  return obj;
+};
+
+export const setFocus = (key, state, val) => {
+  const obj = {
+    ...state,
+    [key]: {
+      value: state[key].value,
+      focus: val,
+    },
+  };
+  return obj;
+};

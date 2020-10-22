@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import { InputContext } from "../../context/InputContext";
+import { setData, setFocus } from "../../utils/functions";
 
 const Inputbox = (props) => {
   const { label, id, help, match } = props;
@@ -7,7 +8,18 @@ const Inputbox = (props) => {
 
   const updateInputData = (e) => {
     const data = e.target.value;
-    setInputData({ ...inputData, [id]: data.trim() });
+    const update = setData(id, data, inputData);
+    setInputData(update);
+  };
+
+  const setInputFocus = () => {
+    const update = setFocus(id, inputData, true);
+    setInputData(update);
+  };
+
+  const resetInputFocus = () => {
+    const update = setFocus(id, inputData, false);
+    setInputData(update);
   };
 
   return (
@@ -19,6 +31,9 @@ const Inputbox = (props) => {
         title={help}
         id={id}
         onChange={updateInputData}
+        onBlur={resetInputFocus}
+        onFocus={setInputFocus}
+        value={inputData[id].value}
       />
     </Fragment>
   );

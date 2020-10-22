@@ -1,6 +1,5 @@
 import React from "react";
 import { Dropdown, Inputbox } from "../exports";
-import { InputProvider } from "../../context/InputContext";
 import { getYearRange, getMonthRange } from "../../utils/functions";
 import "./App.css";
 
@@ -11,17 +10,16 @@ const App = () => {
   };
   return (
     <main className="app">
-      <InputProvider>
         <form className="app__form" onSubmit={handleSubmit}>
           <Inputbox
             label="Card Number"
-            id="card-number"
+            id="cardNumber"
             match="^[\d\s]+$"
             help="Card Number can only consist of numbers and spaces"
           />
           <Inputbox
             label="Card Name"
-            id="card-name"
+            id="cardName"
             match="^[a-zA-Z\s]+$"
             help="Name of person that owns this card Allowed: a-z/A-Z/spaces"
           />
@@ -31,20 +29,20 @@ const App = () => {
               <Dropdown
                 options={getMonthRange()}
                 label="Expiration Month"
-                id="expiration-month"
+                id="expirationMonth"
                 boxfor="Month"
               />
               <Dropdown
                 options={getYearRange()}
                 label="Expiration Year"
-                id="expiration-year"
+                id="expirationYear"
                 boxfor="Year"
               />
             </div>
             <div>
               <Inputbox
                 label="CVV"
-                id="card-cvv"
+                id="cardCVV"
                 match="[0-9]{3,4}"
                 help="CVV code must be 3-4 digits long"
               />
@@ -52,7 +50,6 @@ const App = () => {
           </div>
           <button type="submit">Submit</button>
         </form>
-      </InputProvider>
     </main>
   );
 };
