@@ -33,10 +33,13 @@ export const getMonthRange = () => {
 };
 
 export const setData = (key, data, state) => {
+  let valueData = data;
+  if (data.includes("Year")) valueData = "YY";
+  if (data.includes("Month")) valueData = "MM";
   const obj = {
     ...state,
     [key]: {
-      value: data.trim(),
+      value: valueData,
       focus: state[key].focus,
     },
   };

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { InputContext } from "../../context/InputContext";
 import { setData, setFocus } from "../../utils/functions";
+import "./Dropdown.css";
 
 const Dropdown = (props) => {
   const { label, boxfor, options, id } = props;
@@ -40,7 +41,9 @@ const Dropdown = (props) => {
       onFocus={setBoxFocus}
       value={inputData[id].value}
     >
-      <option defaultValue>&#x2713; {boxfor}</option>
+      <option defaultValue data="disabled">
+        &#x2713; {boxfor}
+      </option>
       {renderOptions()}
     </select>
   );

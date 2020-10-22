@@ -1,0 +1,69 @@
+.card {
+  width: 80%;
+  height: 100%;
+  background-color: #1c1737;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  padding: 20px;
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+}
+
+.card__face--back {
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.card__chip {
+  height: 30px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: #c6dbec;
+}
+
+.card__header,
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card__expires {
+  width: 71px;
+}
+
+.card__holder {
+  margin-right: 10px;
+  flex: 1 0 auto;
+}
+
+.card__field {
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.field-active {
+  border-color: #e4e4e4;
+}
+
+.card__number span {
+  font-size: 1.4rem;
+}

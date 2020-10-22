@@ -1,0 +1,40 @@
+.card-chip {
+  height: 30px;
+  width: 40px;
+  border-radius: 5px;
+  background-color: #c6dbec;
+}
+
+.card-marker-front {
+  font-size: 1.4rem;
+}
+
+.card-header,
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.card-expires {
+  width: 71px;
+}
+
+.card-holder {
+  margin-right: 10px;
+  flex: 1 0 auto;
+}
+
+.card-field {
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.field-active {
+  border-color: #e4e4e4;
+}
+
+.card-number span {
+  font-size: 1.4rem;
+}

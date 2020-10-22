@@ -23,6 +23,14 @@ code {
     monospace;
 }
 
+p,
+small,
+strong,
+span {
+  color: #e4e4e4;
+  display: block;
+}
+
 label {
   font-size: 0.7rem;
   font-weight: 800;
