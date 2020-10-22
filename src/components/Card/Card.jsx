@@ -5,7 +5,7 @@ import { CardFront, CardBack } from "../exports";
 import "./Card.css";
 
 const Card = () => {
-  const [inputData, setInputData] = useContext(InputContext);
+  const [inputData] = useContext(InputContext);
 
   let dateFieldClass = "";
   if (inputData.expirationMonth.focus || inputData.expirationYear.focus) {
