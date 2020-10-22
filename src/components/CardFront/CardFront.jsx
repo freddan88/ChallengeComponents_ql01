@@ -10,12 +10,13 @@ const CardFront = (props) => {
     cleanNameValue,
     cleanMonthValue,
     cleanYearValue,
+    brand,
   } = props;
   return (
     <div className="card__face card__face--front">
       <div className="card-header">
         <div className="card-chip" />
-        <span className="card-marker-front">Visa</span>
+        <span className="card-marker-front">{brand}</span>
       </div>
       <div className={`card-number card-field ${numberFieldClass}`}>
         <span>{cleanNumberValue || "#### #### #### ####"}</span>

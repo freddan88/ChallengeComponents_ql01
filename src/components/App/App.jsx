@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Dropdown, Inputbox, Card } from "../exports";
+import { InputContext } from "../../context/InputContext";
+import { checkCreditCard } from "../../utils/functions";
 import { getYearRange, getMonthRange } from "../../utils/functions";
 import "./App.css";
 
 const App = () => {
+  const [cardBrand, setCardBrand] = useState("Card");
+  const [maxCardNumber, setMaxCardNumber] = useState("19");
+  const [minCardNumber, setMinCardNumber] = useState("13");
+  const [inputData] = useContext(InputContext);
+
+  useEffect(() => {
+    const cardInfo = checkCreditCard(inputData.cardNumber.value);
+    if (cardInfo) {
+      setCardBrand(cardInfo.brand);
+      setMaxCardNumber(cardInfo.maxCharacters);
+      setMinCardNumber(cardInfo.minCharacters);
+    }
+    if (inputData.cardNumber.value.length === 0) {
+      setCardBrand("Visa");
+    }
+  }, [inputData]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
   };
+
   return (
     <main className="app">
       <div className="app__card-container">
-        <Card />
+        <Card brand={cardBrand} />
       </div>
       <form className="app__form" onSubmit={handleSubmit}>
         <Inputbox
@@ -19,8 +38,8 @@ const App = () => {
           id="cardNumber"
           match="^[\d\s]+$"
           help="Card Number can only consist of numbers and spaces"
-          maxCharactersLength="19"
-          minCharactersLength="13"
+          maxCharactersLength={maxCardNumber}
+          minCharactersLength={minCardNumber}
         />
         <Inputbox
           label="Card Name"

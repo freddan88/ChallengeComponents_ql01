@@ -4,7 +4,7 @@ import DOMPurify from "dompurify";
 import { CardFront, CardBack } from "../exports";
 import "./Card.css";
 
-const Card = () => {
+const Card = (props) => {
   const [inputData] = useContext(InputContext);
 
   let dateFieldClass = "";
@@ -23,6 +23,7 @@ const Card = () => {
   return (
     <div className={`card ${showBackFace ? "is-flipped" : ""}`}>
       <CardFront
+        brand={props.brand}
         dateFieldClass={dateFieldClass}
         nameFieldClass={nameFieldClass}
         numberFieldClass={numberFieldClass}
@@ -31,7 +32,7 @@ const Card = () => {
         cleanMonthValue={cleanMonthValue}
         cleanYearValue={cleanYearValue}
       />
-      <CardBack cleanCVVData={cleanCVVData} />
+      <CardBack cleanCVVData={cleanCVVData} brand={props.brand} />
     </div>
   );
 };
