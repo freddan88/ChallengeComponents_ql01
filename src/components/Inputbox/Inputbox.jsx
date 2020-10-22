@@ -3,7 +3,14 @@ import { InputContext } from "../../context/InputContext";
 import { setData, setFocus } from "../../utils/functions";
 
 const Inputbox = (props) => {
-  const { label, id, help, match } = props;
+  const {
+    id,
+    help,
+    match,
+    label,
+    maxCharactersLength,
+    minCharactersLength,
+  } = props;
   const [inputData, setInputData] = useContext(InputContext);
 
   const updateInputData = (e) => {
@@ -26,14 +33,16 @@ const Inputbox = (props) => {
     <Fragment>
       <label htmlFor={id}>{label}</label>
       <input
-        type="text"
-        pattern={match}
-        title={help}
         id={id}
-        onChange={updateInputData}
-        onBlur={resetInputFocus}
+        type="text"
+        title={help}
+        pattern={match}
         onFocus={setInputFocus}
+        onBlur={resetInputFocus}
+        onChange={updateInputData}
         value={inputData[id].value}
+        maxLength={maxCharactersLength}
+        minLength={minCharactersLength}
       />
     </Fragment>
   );

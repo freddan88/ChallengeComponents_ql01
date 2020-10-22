@@ -19,12 +19,16 @@ const App = () => {
           id="cardNumber"
           match="^[\d\s]+$"
           help="Card Number can only consist of numbers and spaces"
+          maxCharactersLength="19"
+          minCharactersLength="13"
         />
         <Inputbox
           label="Card Name"
           id="cardName"
           match="^[a-zA-Z\s]+$"
           help="Name of person that owns this card Allowed: a-z/A-Z/spaces"
+          maxCharactersLength="25"
+          minCharactersLength="1"
         />
         <div className="app__inputrow">
           <div>
@@ -48,6 +52,8 @@ const App = () => {
               id="cardCVV"
               match="[0-9]{3,4}"
               help="CVV code must be 3-4 digits long"
+              maxCharactersLength="4"
+              minCharactersLength="3"
             />
           </div>
         </div>
