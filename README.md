@@ -1,3 +1,41 @@
+## Part 2 - Components - Code Challenge
+
+This project is part of a code challenge. To use it you will need to download it as a .zip or clone it to your desktop. <br/>
+We are going to clone it and use node.js and npm to install dependencies.
+
+- Node.js: https://nodejs.org/en/download
+
+> Live site: https://challenge-components-ql01.netlify.app
+
+---
+
+### 1. clone to desktop
+
+```
+git clone https://github.com/freddan88/ChallengeComponents_ql01.git
+```
+
+### 2. install dependencies
+
+```
+cd ChallengeComponents_ql01 && npm install
+```
+
+### 3. Start de project (will start a server and open browser)
+
+```
+npm start
+```
+
+### Resources
+
+- https://regexr.com
+- http://gamon.webfactional.com/regexnumericrangegenerator
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+- https://www.freeformatter.com/credit-card-number-generator-validator.html
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
