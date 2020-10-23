@@ -46,7 +46,7 @@ const App = () => {
           id="cardName"
           match="^[a-zA-Z\s]+$"
           help="Name of person that owns this card Allowed: a-z/A-Z/spaces"
-          maxCharactersLength="25"
+          maxCharactersLength="23"
           minCharactersLength="1"
         />
         <div className="app__inputrow">
