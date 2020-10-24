@@ -1,8 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { InputProvider } from "../../context/InputContext";
+import { shallow } from "enzyme";
 import Card from "./Card";
 
-test("render Card without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Card />, div);
+describe("Card Component Test", () => {
+  test("Render Card Component", () => {
+    const wrapper = shallow(
+      <InputProvider>
+        <Card />
+      </InputProvider>
+    );
+    expect(wrapper.containsMatchingElement(<Card />)).toEqual(true);
+  });
 });

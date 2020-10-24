@@ -1,8 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
 import CardBack from "./CardBack";
 
-test("render CardBack without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<CardBack />, div);
+describe("CardBack Component Test", () => {
+  test("Render CardBack Component", () => {
+    const wrapper = shallow(
+      <div>
+        <CardBack brand="Visa" cleanCVVData="0123" />
+      </div>
+    );
+    expect(wrapper.containsMatchingElement(<CardBack />)).toEqual(true);
+  });
 });

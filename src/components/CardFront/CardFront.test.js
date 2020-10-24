@@ -1,8 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
 import CardFront from "./CardFront";
 
-test("render CardFront without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<CardFront />, div);
+describe("CardFront Component Test", () => {
+  test("Render CardFront Component", () => {
+    const wrapper = shallow(
+      <div>
+        <CardFront
+          dateFieldClass="test"
+          nameFieldClass="test"
+          numberFieldClass="test"
+          cleanNumberValue="32"
+          cleanNameValue="Fredrik Leemann"
+          cleanMonthValue="10"
+          cleanYearValue="2020"
+          brand="Visa"
+        />
+      </div>
+    );
+    expect(wrapper.containsMatchingElement(<CardFront />)).toEqual(true);
+  });
 });
