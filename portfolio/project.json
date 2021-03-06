@@ -1,0 +1,19 @@
+{
+  "projectName": "Credit Card QL01",
+  "projectTechnologies": [
+    "React.js",
+    "Javascript",
+    "JSX",
+    "CSS",
+    "React Context-api",
+    "Regular expressions"
+  ],
+  "projectResource": "https://challenge-components-ql01.netlify.app",
+  "projectResourceCategoryIndex": 0,
+  "projectResourceCategories": ["webpage", "youtube", "download", "readme"],
+  "projectDescription": "This project is part of a coding challenge. This app represents a credit-card with basic regex-validation and will also difference between different vendors",
+  "projectImage": "",
+  "apiEndpoint": "https://api.github.com/repos/freddan88/challengecomponents_ql01",
+  "licenseUrl": "https://choosealicense.com/licenses/mit",
+  "licenseName": "License: MIT"
+}
