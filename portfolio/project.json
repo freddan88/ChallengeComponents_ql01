@@ -1,5 +1,14 @@
 {
   "projectName": "Credit Card QL01",
+  "projectOriginIndex": 0,
+  "projectCreatedAt": "2020-10-21",
+  "projectResourceCategoryIndex": 0,
+  "projectResource": "https://challenge-components-ql01.netlify.app",
+  "projectGitHubUrl": "https://github.com/freddan88/ChallengeComponents_ql01",
+  "projectImage": "https://github.com/freddan88/ChallengeComponents_ql01/blob/main/portfolio/credit-card.jpg",
+  "projectDescription": "This project is part of a coding challenge. This app represents a credit-card with basic regex-validation and will also difference between different vendors",
+  "licenseUrl": "https://choosealicense.com/licenses/mit",
+  "licenseName": "License: MIT",
   "projectTechnologies": [
     "React.js",
     "Javascript",
@@ -7,14 +16,5 @@
     "CSS",
     "React Context-api",
     "Regular expressions"
-  ],
-  "projectCreatedAt": "2020-10-21",
-  "projectGitHubUrl": "https://github.com/freddan88/ChallengeComponents_ql01",
-  "projectResource": "https://challenge-components-ql01.netlify.app",
-  "projectResourceCategoryIndex": 0,
-  "projectResourceCategories": ["webpage", "youtube", "download", "readme"],
-  "projectDescription": "This project is part of a coding challenge. This app represents a credit-card with basic regex-validation and will also difference between different vendors",
-  "projectImage": "https://github.com/freddan88/ChallengeComponents_ql01/blob/main/portfolio/credit-card.jpg",
-  "licenseUrl": "https://choosealicense.com/licenses/mit",
-  "licenseName": "License: MIT"
+  ]
 }
